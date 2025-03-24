@@ -1,0 +1,15 @@
+To complete the theme, you should create a screenshot.png file in the theme root directory with the following specifications:
+
+1. Image size: 1200x900 pixels
+2. Format: PNG
+3. Content: A visual representation of your theme showing the blog layout with React logo
+
+You can use the HTML file (screenshot.html) provided in this package as a reference to capture a screenshot.
+
+The recommended approach is:
+1. Set up a local WordPress installation
+2. Install and activate this theme
+3. Add some sample posts
+4. Take a screenshot of the homepage
+5. Resize to 1200x900 pixels
+6. Save as screenshot.png in the theme root directory

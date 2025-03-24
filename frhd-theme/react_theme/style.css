@@ -1,0 +1,360 @@
+/*
+Theme Name: React.dev Blog
+Theme URI: https://github.com/yourusername/react-dev-blog-theme
+Author: Your Name
+Author URI: https://your-website.com
+Description: A WordPress theme inspired by the React.dev blog design
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: react-dev-blog
+Tags: blog, react, modern, clean
+*/
+
+:root {
+  --bg-color: #fbfbfb;
+  --primary-text: #23272F;
+  --secondary-text: #404756;
+  --nav-text: #6b7280;
+  --link-color: #149ECA;
+  --link-hover: #0e7895;
+  --border-color: #EBECF0;
+  --code-bg: #f6f8fa;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Optimistic Text', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--primary-text);
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header */
+.site-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.site-branding {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-logo {
+  width: 24px;
+  height: 24px;
+}
+
+.site-title {
+  font-family: 'Optimistic Display', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+}
+
+.main-navigation ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-navigation a {
+  color: var(--nav-text);
+  font-weight: 500;
+  padding: 8px 0;
+}
+
+.main-navigation a:hover {
+  color: var(--primary-text);
+}
+
+.main-navigation .current-menu-item a {
+  color: var(--primary-text);
+}
+
+/* Blog Header */
+.blog-header {
+  padding: 40px 0 20px;
+}
+
+.blog-title {
+  font-family: 'Optimistic Display', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  margin: 0 0 16px;
+}
+
+.blog-description {
+  font-size: 18px;
+  color: var(--secondary-text);
+  margin: 0 0 32px;
+  max-width: 80%;
+}
+
+/* Blog Post List */
+.post-list {
+  max-width: 800px;
+}
+
+.post-item {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.post-item:last-child {
+  border-bottom: none;
+}
+
+.post-title {
+  font-family: 'Optimistic Display', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+
+.post-meta {
+  color: var(--secondary-text);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.post-excerpt p {
+  margin-top: 0;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* Single Post */
+.single-post-title {
+  font-family: 'Optimistic Display', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.post-content {
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.post-content h2 {
+  font-family: 'Optimistic Display', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  margin: 32px 0 16px;
+}
+
+.post-content h3 {
+  font-family: 'Optimistic Display', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  margin: 28px 0 14px;
+}
+
+.post-content p {
+  margin: 0 0 20px;
+}
+
+.post-content ul, .post-content ol {
+  margin-bottom: 20px;
+  padding-left: 24px;
+}
+
+.post-content li {
+  margin-bottom: 8px;
+}
+
+.post-content pre {
+  background-color: var(--code-bg);
+  padding: 16px;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.post-content code {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 14px;
+  background-color: var(--code-bg);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* Footer */
+.site-footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: 60px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-info p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--secondary-text);
+}
+
+.footer-nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav a {
+  color: var(--secondary-text);
+  font-size: 14px;
+}
+
+.footer-nav a:hover {
+  color: var(--primary-text);
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination a {
+  padding: 8px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.pagination a:hover {
+  background-color: var(--border-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-inner, .footer-inner {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .blog-title {
+    font-size: 32px;
+  }
+
+  .blog-description {
+    max-width: 100%;
+  }
+
+  .post-title {
+    font-size: 24px;
+  }
+
+  .single-post-title {
+    font-size: 30px;
+  }
+}
+
+/* Custom Fonts */
+@font-face {
+  font-family: 'Optimistic Display';
+  src: url('fonts/Optimistic_Display_W_Md.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Optimistic Display';
+  src: url('fonts/Optimistic_Display_W_SBd.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Optimistic Display';
+  src: url('fonts/Optimistic_Display_W_Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Optimistic Text';
+  src: url('fonts/Optimistic_Text_W_Rg.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Optimistic Text';
+  src: url('fonts/Optimistic_Text_W_Md.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Optimistic Text';
+  src: url('fonts/Optimistic_Text_W_Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('fonts/Source-Code-Pro-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
