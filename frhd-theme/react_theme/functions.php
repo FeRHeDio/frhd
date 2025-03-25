@@ -163,6 +163,37 @@ function react_dev_blog_custom_header_setup() {
 add_action('after_setup_theme', 'react_dev_blog_custom_header_setup');
 
 /**
+ * Styles the header image and text displayed on the blog.
+ */
+function react_dev_blog_header_style() {
+    $header_text_color = get_header_textcolor();
+
+    // If we get this far, we have custom styles. Let's do this.
+    ?>
+    <style type="text/css">
+    <?php
+    // Has the text been hidden?
+    if ( ! display_header_text() ) :
+        ?>
+        .site-title,
+        .site-description {
+            position: absolute;
+            clip: rect(1px, 1px, 1px, 1px);
+            }
+        <?php
+        // If the user has set a custom color for the text use that.
+        else :
+        ?>
+        .site-title a,
+        .site-description {
+            color: #<?php echo esc_attr( $header_text_color ); ?>;
+        }
+    <?php endif; ?>
+    </style>
+    <?php
+}
+
+/**
  * Add custom blog info
  */
 function react_dev_blog_customize_register($wp_customize) {
@@ -203,23 +234,7 @@ add_action('customize_register', 'react_dev_blog_customize_register');
 /**
  * Include additional template functions
  */
-require get_template_directory() . '/inc/template-functions.php';
-
-// Hook theme setup function
-add_action('after_setup_theme', 'react_dev_blog_setup');
-
-// Hook scripts and styles
-add_action('wp_enqueue_scripts', 'react_dev_blog_scripts');
-
-// Hook widget initialization
-add_action('widgets_init', 'react_dev_blog_widgets_init');
-
-// Hook excerpt modifications
-add_filter('excerpt_length', 'react_dev_blog_excerpt_length');
-add_filter('excerpt_more', 'react_dev_blog_excerpt_more');
-
-// Hook custom header setup
-add_action('after_setup_theme', 'react_dev_blog_custom_header_setup');
-
-// Hook customizer registration
-add_action('customize_register', 'react_dev_blog_customize_register');
+$template_functions = get_template_directory() . '/inc/template-functions.php';
+if (file_exists($template_functions)) {
+    require_once $template_functions;
+}
