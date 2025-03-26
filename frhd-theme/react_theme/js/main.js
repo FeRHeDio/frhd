@@ -39,5 +39,29 @@
                 }
             });
         });
+
+        const header = document.querySelector('.site-header');
+        let lastScrollY = window.scrollY;
+
+        function updateHeader() {
+            if (window.scrollY > 0) {
+                header.classList.add('is-scrolled');
+            } else {
+                header.classList.remove('is-scrolled');
+            }
+            lastScrollY = window.scrollY;
+        }
+
+        // Add throttling to improve performance
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    updateHeader();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
     });
 })();
